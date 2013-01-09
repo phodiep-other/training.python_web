@@ -1,19 +1,24 @@
 import socket
 import sys
 
-# Create a TCP/IP socket
+server = socket.socket(2,1,0) # Create a TCP/IP socket
 
-# Bind the socket to the port
 server_address = ('localhost', 50000)
+server.bind(server_address) # Bind the socket to the port
 
-# Listen for incoming connections
+server.listen(1) # Listen for incoming connections
 
 while True:
-    # Wait for a connection
+    con, cli = server.accept() # Wait for a connection
 
     try:
-        # Receive the data and send it back
-        
+        message = con.recv(42) # Receive the data and send it back
+        print (message)
+        con.sendall(message)
 
     finally:
-        # Clean up the connection
+        con.close() # Clean up the connection
+        break
+
+
+
