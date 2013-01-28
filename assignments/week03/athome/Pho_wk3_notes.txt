@@ -1,0 +1,21 @@
+Week 3 Mashup (CL Apt+ Yelp Food)
+-Pho Diep (1/27/2013) phodiep@gmail.com
+
+The of script pulls Craigslist ads for apartments/houses available in the seattle area.
+It then extracts only the posts with specific location info available (longitude, latitude).
+Using those Long/Lat coordinates, the script then pulls up the 2 best matches (via Yelp) for each of the following (near the home that's available for rent)… Bars, pizza, sushi
+more can be added easily
+
+It uses BeautifulSoup to parse the craiglist ads and the Yelp API for business info.
+(the CL ads are for the current day only… still a very long list, may want to ctr+c to exit once satisfied :)
+all of this is printed out in the terminal, so not very user friendly, but it displays the script is working.
+
+**You'll need to install BeautifulSoup4 and oauth2 in VirtualEnv. This is all the soupenv we created in class.
+
+to run: 
+python Pho_wk3.py
+
+
+PS. I'm also currently working on a html version that will hopefully be executable in a browser. May have that running by tuesday. But it's a very long CL list, so I either have to speed it up some how or limit the number of CL listings.
+I'm having the Web_version of the script write out the html, so it can then be read by the browser, not sure if it's faster to write to file and then open/load into script again, or keep the html as a very long string and have the browser read it directly from script. (probably the later)
+now i'm just rambling… Have fun!
