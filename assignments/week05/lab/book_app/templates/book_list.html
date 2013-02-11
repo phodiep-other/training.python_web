@@ -8,5 +8,7 @@
     <p>Here's a list of books you might enjoy.  Click a title to read more 
        about that book.</p>
     <!-- fill out this template with your list -->
+    <p>{% for x in name %}<a href="{{x.url}}">{{x.title}}<br>
+	{% endfor %}</p>
   </body>
 </html>
