@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>{{ entry }}</h1>
+<form action="{% url entry_detail entry.pk %}" method="POST">
+  {% csrf_token %}
+
+  <p><em>Title: </em> {{ entry.title }}<br></p>
+  <p><em>Author: </em> {{ entry.author }}<br></p>
+  <p><em>Publication Date: </em> {{ entry.pub_date }}<br></p>
+  <p><em>Text: </em><br> {{ entry.text }}<br></p>
+
+  <input type="submit" name="submit" value="Submit"/>
+</form>
+{% endblock %}

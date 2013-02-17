@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Latest Entries</h1>
+{% for entry in entry %}
+<div class="entry">
+  <h2><a href="{% url entry_detail entry.pk %}">{{ entry }}</a></h2>
+</div>
+{% endfor %}
+{% endblock %}
